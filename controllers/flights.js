@@ -47,9 +47,7 @@ function addTicket(req, res) {
 
 function postTicket(req, res) {
     req.body.flight = req.params.id
-    console.log(req.body)
     const ticket = new Ticket(req.body)
     ticket.save()
-
-    res.redirect('/flights')
+    res.redirect(`/flights/${req.params.id}`)
 }
