@@ -21,14 +21,13 @@ function newFlight(req, res) {
 }
 
 function create(req, res) {
-    console.log(req.body)
+    if (req.body.departs === '' || req.body.departs === null) req.body.departs = undefined
     const flight = new Flight(req.body);
     flight.save(function (err) {
         if (err) {
             console.log(err)
             return res.redirect('/flights/new');
         }
-        console.log(flight);
         res.redirect('/flights');
     });
 }

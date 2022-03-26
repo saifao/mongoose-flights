@@ -10,6 +10,8 @@
 </head>
 
 <body>
+
+    <h3>Flight Details</h3>
     <table>
         <thead>
             <tr>
@@ -37,16 +39,18 @@
         </tbody>
     </table>
 
+    <h3>Arrival Details</h3>
     <form action="/flights/<%= flight._id %>/dest" method="POST">
-        <input type="text" name="airport">
-        <input type="datetime-local" name="arrival">
+        <label>Add Destination</label><input type="text" name="airport">
+        <label>Add Arrival Date</label><input type="datetime-local" name="arrival">
         <button>Add Arrival Details</button>
     </form>
+    <br>
 
     <table>
         <thead>
             <tr>
-                <th>Destination Airport</th>
+                <th>Destination</th>
                 <th>Arrival Date</th>
             </tr>
         </thead>
@@ -63,7 +67,8 @@
                 <% }) %>
         </tbody>
     </table>
-    <br>
+
+    <h3>Seat Details</h3>
     <table>
         <thead>
             <tr>
